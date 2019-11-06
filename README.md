@@ -10,11 +10,8 @@ and have some visualizations that are created of the average waiting time for fr
 By cloning this repo, it will provide all the required files and directories in order to run the Bus Headway application
 that I created for AT in Auckland, New Zealand.
 
-	Required software:
-  	-R:
-    	-dplyr, stringr, RSQLite
-  	-Python 3.6 or greater
-  	-SQLite
+Required software:
+-R (dplyr, stringr, RSQLite), Python 3.6 or greater, SQLite (Version 3.7 or greater)
 		
 		
 		
@@ -22,7 +19,7 @@ that I created for AT in Auckland, New Zealand.
   	1.) Acquire a API key from AT (https://dev-portal.at.govt.nz/) 
 		
   	2.) Alter the application location variables to where you are cloning the app on your system and your new application key provided by AT.
-      	-This can be done by running the altAppVariables.sh script which will replace all the app locations in the respective files
+      	-This can be done by first CHANGING the variables to the respective locations and then altAppVariables.sh script which will replace all the app locations in the respective files
 				
   	3.) Run the initialize application using the initApp.sh script, which will create the database tables and views
 		
