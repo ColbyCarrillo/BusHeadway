@@ -4,8 +4,7 @@ This project was for my Dissertation course in order to complete my Masters of P
 from University of Auckland, New Zealand.
 
 The purpose of this application is to gather, in 20 second intervals from 06:00 to 23:00, the trip updates sent out
-by Auckland Transport (AT). With this data we calculate three estimators of bus headway (observed, mixed, and current)
-and have some visualizations that are created of the average waiting time for frequent routes.
+by Auckland Transport (AT). With this data we calculate three estimators of bus headway (observed, mixed, and current), from 07:05 to 23:00, and have some visualizations that are created of the average waiting time for frequent routes.
 
 By cloning this repo, it will provide all the required files and directories in order to run the Bus Headway application
 that I created for AT in Auckland, New Zealand.
