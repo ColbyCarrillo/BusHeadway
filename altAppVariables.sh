@@ -9,7 +9,7 @@ do
 done
 
 #Change below * to your new API key provided by AT
-NEWKEY='Ocp-Apim-Subscription-Key': '*'
+NEWKEY="'Ocp-Apim-Subscription-Key': '*'"
 #
 
 sed -i "s/"'Ocp-Apim-Subscription-Key': '*'"/'${NEWKEY}'/g" "${APPLOC}/code/api/callTripUpdatesAPI.py"
