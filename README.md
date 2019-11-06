@@ -19,17 +19,10 @@ that I created for AT in Auckland, New Zealand.
 		
 		
 	One is required to:
-<<<<<<< HEAD
   	1.) Acquire a API key from AT (https://dev-portal.at.govt.nz/) 
 		
   	2.) Alter the application location variables to where you are cloning the app on your system and your new application key provided by AT.
       	-This can be done by running the altAppVariables.sh script which will replace all the app locations in the respective files
-=======
-  	1.) Acquire a API key from AT (https://dev-portal.at.govt.nz/) and replace the '*' in the callTripUpdatesAPI.py file. 
-		
-  	2.) Alter the application location variables to where you are placing the app on your system.
-      	-This can be done by running the X script which will replace all the app locations in the respective files
->>>>>>> d84c4075e440ac143cb4f335b150abd8e23c5794
 				
   	3.) Run the initialize application using the initApp.sh script, which will create the database tables and views
 		
@@ -38,11 +31,6 @@ that I created for AT in Auckland, New Zealand.
           		-example: 0 1 * * * PATH=/opt/anaconda3/bin:$PATH /home/ccar788/headway/code/masterScripts/startProg.sh >> /home/ccar788/headway/code/masterScripts/output/cron.txt 2>&1
      	 	b.) removeOldFiles.sh
           		-example: 0 1 * * * /home/ccar788/headway/code/masterScripts/removeOldFiles.sh
-<<<<<<< HEAD
 
 	5.) If you desire for the application to start right away, you can run 'nohup startProg.sh &' to start the program in the background, followed by disown %1 to have it run even after you logout (given that you only have one process running in background)      
-=======
-          
-      
->>>>>>> d84c4075e440ac143cb4f335b150abd8e23c5794
 
