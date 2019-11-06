@@ -38,7 +38,7 @@ if ((currentTime < fullStartTime)==TRUE) {
         dbCon <- dbConnect(SQLite(),dbLoc)
         actualResultsTest <- dbSendQuery(dbCon, "SELECT * FROM TripUpdates WHERE arrival ='0'")
         busDataTest.df <- dbFetch(actualResultsTest)
-        actualResults <- dbSendQuery(dbCon, "SELECT * FROM bus2")
+        actualResults <- dbSendQuery(dbCon, "SELECT * FROM bus")
         busData.df <- dbFetch(actualResults)
         
         if (nrow(busDataTest.df)==nrow(busData.df)) {
@@ -98,7 +98,7 @@ if ((currentTime < fullStartTime)==TRUE) {
         dbCon <- dbConnect(SQLite(),dbLoc)
         actualResultsTest <- dbSendQuery(dbCon, "SELECT * FROM TripUpdates WHERE arrival ='0'")
         busDataTest.df <- dbFetch(actualResultsTest)
-        actualResults <- dbSendQuery(dbCon, "SELECT * FROM bus2")
+        actualResults <- dbSendQuery(dbCon, "SELECT * FROM bus")
         busData.df <- dbFetch(actualResults)
         if (nrow(busDataTest.df)==nrow(busData.df)) {
                 
@@ -160,7 +160,7 @@ if ((currentTime < fullStartTime)==TRUE) {
         dbCon <- dbConnect(SQLite(),dbLoc)
         actualResultsTest <- dbSendQuery(dbCon, "SELECT * FROM TripUpdates WHERE arrival ='0'")
         busDataTest.df <- dbFetch(actualResultsTest)
-        actualResults <- dbSendQuery(dbCon, "SELECT * FROM bus2")
+        actualResults <- dbSendQuery(dbCon, "SELECT * FROM bus")
         busData.df <- dbFetch(actualResults)
         if (nrow(busDataTest.df)==nrow(busData.df)) {
                 

@@ -7,8 +7,6 @@ print(scriptStartTime)
 APPLOC="/home/ccar788/"
 
 
-
-
 library(RSQLite)
 library(stringr)
 library(dplyr)
@@ -19,7 +17,7 @@ dbCon <- dbConnect(SQLite(),dbLoc)
 
 
 ### Querying Stop_Times table for Schedued Trips  ###
-actualResults <- dbSendQuery(dbCon, "SELECT * FROM schd2")
+actualResults <- dbSendQuery(dbCon, "SELECT * FROM schd")
 scheduledBusData.df <- dbFetch(actualResults)
 
 routeResults <- dbSendQuery(dbCon, "SELECT * FROM Routes")

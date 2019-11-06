@@ -19,7 +19,7 @@ dbCon <- dbConnect(SQLite(),dbLoc)
 
 
 # Querying TripUpdates table for observed times
-actualResults <- dbSendQuery(dbCon, "SELECT * FROM bus2")
+actualResults <- dbSendQuery(dbCon, "SELECT * FROM bus")
 busData.df <- dbFetch(actualResults)
 dbDisconnect(dbCon)
 

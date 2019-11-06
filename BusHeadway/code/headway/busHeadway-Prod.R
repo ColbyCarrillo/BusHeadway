@@ -21,35 +21,19 @@ dbCon <- dbConnect(SQLite(),dbLoc)
 
 # Querying TripUpdates table for observed times
 
-actualResults <- dbSendQuery(dbCon, "SELECT * FROM bus2")
-#testResults <- dbSendQuery(dbCon, "SELECT * FROM TripUpdates")
+actualResults <- dbSendQuery(dbCon, "SELECT * FROM bus")
 busData.df <- dbFetch(actualResults)
-testResults <-  dbSendQuery(dbCon, "SELECT tu.stop_id AS stop_id,
-tu.route_id AS route_id,
-r.route_short_name AS route_short_name,
-tu.trip_id AS trip_id,
-tu.start_time AS start_time,
-tu.stop_sequence AS stop_sequence,
-datetime(tu.timestamp, 'unixepoch', 'localtime') AS timestamp,
-datetime(tu.api_timestamp, 'unixepoch', 'localtime') AS api_timestamp,
-tu.delay AS delay,
-tu.arrival,
-tu.departure
-FROM TripUpdates tu, Routes r
-WHERE tu.route_id = r.route_id AND
-date(tu.timestamp, 'unixepoch', 'localtime') = strftime('%Y-%m-%d', 'now', 'localtime')")
-testBusData.df <- dbFetch(testResults)
 dbDisconnect(dbCon)
 
 
 # Removes duplicate entries for the same stop and takes the last one
-testBusData.df$api_timestamp <- as.POSIXlt(testBusData.df$api_timestamp)
-testBusData.df$timestamp <- as.POSIXlt(testBusData.df$timestamp)
-testBusData.df<-testBusData.df[order(testBusData.df$trip_id,
-                                     testBusData.df$stop_sequence,
-                                     testBusData.df$timestamp),]
+busData.df$api_timestamp <- as.POSIXlt(busData.df$api_timestamp)
+busData.df$timestamp <- as.POSIXlt(busData.df$timestamp)
+busData.df<-busData.df[order(busData.df$trip_id,
+                             busData.df$stop_sequence,
+                             busData.df$timestamp),]
 
-try(busData.df<-testBusData.df[!duplicated(testBusData.df[,c(1:6)],fromLast = T),])
+try(busData.df<-busData.df[!duplicated(busData.df[,c(1:6)],fromLast = T),])
 
 
 

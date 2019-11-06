@@ -71,52 +71,23 @@ CREATE INDEX idx_end_date_calendars ON Calendars(end_date);
 
 
 CREATE VIEW bus AS 
-SELECT stop_id, 
-route_id, 
-trip_id, 
-start_time,
-stop_sequence, 
-datetime(timestamp, 'unixepoch', 'localtime') AS timestamp, 
-datetime(api_timestamp, 'unixepoch', 'localtime') AS api_timestamp,
-delay
-FROM TripUpdates
-WHERE date(timestamp, 'unixepoch', 'localtime') = strftime('%Y-%m-%d', 'now', 'localtime')  AND
-arrival = '0';
-
-
-CREATE VIEW bus2 AS 
-SELECT tu.stop_id AS stop_id, 
+SELECT tu.stop_id AS stop_id,
 tu.route_id AS route_id,
 r.route_short_name AS route_short_name,
-tu.trip_id AS trip_id, 
+tu.trip_id AS trip_id,
 tu.start_time AS start_time,
-tu.stop_sequence AS stop_sequence, 
-datetime(tu.timestamp, 'unixepoch', 'localtime') AS timestamp, 
+tu.stop_sequence AS stop_sequence,
+datetime(tu.timestamp, 'unixepoch', 'localtime') AS timestamp,
 datetime(tu.api_timestamp, 'unixepoch', 'localtime') AS api_timestamp,
-tu.delay AS delay
+tu.delay AS delay,
+tu.arrival,
+tu.departure
 FROM TripUpdates tu, Routes r
 WHERE tu.route_id = r.route_id AND
-date(tu.timestamp, 'unixepoch', 'localtime') = strftime('%Y-%m-%d', 'now', 'localtime')  AND
-arrival = '0';
+date(tu.timestamp, 'unixepoch', 'localtime') = strftime('%Y-%m-%d', 'now', 'localtime');
 
 
 CREATE VIEW schd AS 
-SELECT st.*, t.*, c.*
-FROM StopTimes st, Trips t, Calendars c
-WHERE st.trip_id = t.trip_id AND
-t.service_id = c.service_id AND
-c.end_date > strftime('%Y%m%d',date('now', 'localtime')) AND
-CASE strftime('%w','now', 'localtime')
-        WHEN '1' THEN c.Monday
-        WHEN '2' THEN c.Tuesday
-        WHEN '3' THEN c.Wednesday
-        WHEN '4' THEN c.Thursday
-        WHEN '5' THEN c.Friday
-        WHEN '6' THEN c.Saturday
-        ELSE c.Sunday
-        END = 1;
-
-CREATE VIEW schd2 AS 
 SELECT st.*, t.*, c.*, r.route_short_name AS route_short_name
 FROM StopTimes st, Trips t, Calendars c, Routes r
 WHERE st.trip_id = t.trip_id AND
@@ -132,5 +103,6 @@ CASE strftime('%w','now', 'localtime')
         WHEN '6' THEN c.Saturday
         ELSE c.Sunday
         END = 1;
+
 
 PRAGMA journal_mode=WAL;
