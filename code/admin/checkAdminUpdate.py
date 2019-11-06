@@ -9,9 +9,9 @@ from bs4 import BeautifulSoup
 
 APPLOC="/home/ccar788/"
 
-codeDirectory = APPLOC+'headway/code/admin'
-dataDirectory = APPLOC+'headway/data/admin'
-databasePath = APPLOC+'headway/data/database/BhProd.db'
+codeDirectory = APPLOC+'BusHeadway/code/admin'
+dataDirectory = APPLOC+'BusHeadway/data/admin'
+databasePath = APPLOC+'BusHeadway/data/database/BhProd.db'
 
 def downloadZip():
     import re, datetime, zipfile

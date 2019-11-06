@@ -6,7 +6,7 @@ print(scriptStartTime)
 
 APPLOC="/home/ccar788/"
 
-headwayDataDriectory = paste(APPLOC,'headway/data/headwaySummary/',sep="")
+headwayDataDriectory = paste(APPLOC,'BusHeadway/data/headwaySummary/',sep="")
 curDate<-Sys.Date()
 pureHistHeadwayFile = paste('pureSummary',curDate,'.csv',sep="")
 mixEstimatorFile = paste('mixEstimateSummary',curDate,'.csv',sep="")

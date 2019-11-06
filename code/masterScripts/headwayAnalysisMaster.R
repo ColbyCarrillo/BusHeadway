@@ -20,8 +20,8 @@ minutesBetweenCall = 10
 #Used for sleep
 secondsBetweenCall = minutesBetweenCall*60
 
-headwaySummaryScriptLocation = paste(APPLOC,'headway/code/headway/busHeadwaySummary-Prod.R',sep="")
-stopHeadwaySummaryScriptLocation = paste(APPLOC,'headway/code/headway/busHeadwaySummaryStops-Prod.R',sep="")
+headwaySummaryScriptLocation = paste(APPLOC,'BusHeadway/code/headway/busHeadwaySummary-Prod.R',sep="")
+stopHeadwaySummaryScriptLocation = paste(APPLOC,'BusHeadway/code/headway/busHeadwaySummaryStops-Prod.R',sep="")
 headwaySummaryFull = sprintf("Rscript %s", headwaySummaryScriptLocation)
 stopHeadwaySummaryFull = sprintf("Rscript %s", stopHeadwaySummaryScriptLocation)
 

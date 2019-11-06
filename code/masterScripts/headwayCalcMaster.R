@@ -20,7 +20,7 @@ minutesBetweenCall = 10
 #Used for sleep
 secondsBetweenCall = minutesBetweenCall*60
 
-headwayScriptLocation = paste(APPLOC,'headway/code/headway/busHeadway-Prod.R',sep="")
+headwayScriptLocation = paste(APPLOC,'BusHeadway/code/headway/busHeadway-Prod.R',sep="")
 
 headwayFull = sprintf("Rscript %s", headwayScriptLocation)
 
@@ -34,7 +34,7 @@ if ((currentTime < fullStartTime)==TRUE) {
         
         # Want to check that we dont have issue with our admin data
         
-        dbLoc = paste(APPLOC,"headway/data/database/BhProd.db",sep="")
+        dbLoc = paste(APPLOC,"BusHeadway/data/database/BhProd.db",sep="")
         dbCon <- dbConnect(SQLite(),dbLoc)
         actualResultsTest <- dbSendQuery(dbCon, "SELECT * FROM TripUpdates WHERE arrival ='0'")
         busDataTest.df <- dbFetch(actualResultsTest)
@@ -48,18 +48,18 @@ if ((currentTime < fullStartTime)==TRUE) {
                         
                 } else {
                         print("Ran into issues with admin data, rerunning all admin collection")
-                        adminLoc = paste(APPLOC,"headway/code/admin/",sep="")
+                        adminLoc = paste(APPLOC,"BusHeadway/code/admin/",sep="")
                         currentFiles <- list.files(adminLoc)
                         removeFile<-currentFiles[currentFiles %in% grep("Last",currentFiles, value=T)]
                         file.remove(paste(adminLoc,removeFile,sep=""))
                         
-                        adminScriptLocation <- paste(APPLOC,"headway/code/admin/checkAdminUpdate.py",sep="") 
+                        adminScriptLocation <- paste(APPLOC,"BusHeadway/code/admin/checkAdminUpdate.py",sep="") 
                         adminCallFull <- sprintf("python3 %s", adminScriptLocation)
                         system(adminCallFull)
-                        schdBusScripLocation <- paste(APPLOC,"headway/code/admin/pullScheduledTrips.R",sep="")
+                        schdBusScripLocation <- paste(APPLOC,"BusHeadway/code/admin/pullScheduledTrips.R",sep="")
                         schdCallFull <- sprintf("Rscript %s", schdBusScripLocation)
                         system(schdCallFull)
-                        busEstScripLocation <- paste(APPLOC,"headway/code/admin/estimateTravelTime.R",sep="")
+                        busEstScripLocation <- paste(APPLOC,"BusHeadway/code/admin/estimateTravelTime.R",sep="")
                         busEstCallFull <- sprintf("Rscript %s", busEstScripLocation)
                         system(busEstCallFull) 
                 }
@@ -94,7 +94,7 @@ if ((currentTime < fullStartTime)==TRUE) {
         
         # Want to check that we dont have issue with our admin data
         
-        dbLoc = paste(APPLOC,"headway/data/database/BhProd.db",sep="")
+        dbLoc = paste(APPLOC,"BusHeadway/data/database/BhProd.db",sep="")
         dbCon <- dbConnect(SQLite(),dbLoc)
         actualResultsTest <- dbSendQuery(dbCon, "SELECT * FROM TripUpdates WHERE arrival ='0'")
         busDataTest.df <- dbFetch(actualResultsTest)
@@ -107,18 +107,18 @@ if ((currentTime < fullStartTime)==TRUE) {
                         
                 } else {
                         print("Ran into issues with admin data, rerunning all admin collection")
-                        adminLoc = paste(APPLOC,"headway/code/admin/",sep="")
+                        adminLoc = paste(APPLOC,"BusHeadway/code/admin/",sep="")
                         currentFiles <- list.files(adminLoc)
                         removeFile<-currentFiles[currentFiles %in% grep("Last",currentFiles, value=T)]
                         file.remove(paste(adminLoc,removeFile,sep=""))
                         
-                        adminScriptLocation <- paste(APPLOC,"headway/code/admin/checkAdminUpdate.py",sep="") 
+                        adminScriptLocation <- paste(APPLOC,"BusHeadway/code/admin/checkAdminUpdate.py",sep="") 
                         adminCallFull <- sprintf("python3 %s", adminScriptLocation)
                         system(adminCallFull)
-                        schdBusScripLocation <- paste(APPLOC,"headway/code/admin/pullScheduledTrips.R",sep="")
+                        schdBusScripLocation <- paste(APPLOC,"BusHeadway/code/admin/pullScheduledTrips.R",sep="")
                         schdCallFull <- sprintf("Rscript %s", schdBusScripLocation)
                         system(schdCallFull)
-                        busEstScripLocation <- paste(APPLOC,"headway/code/admin/estimateTravelTime.R",sep="")
+                        busEstScripLocation <- paste(APPLOC,"BusHeadway/code/admin/estimateTravelTime.R",sep="")
                         busEstCallFull <- sprintf("Rscript %s", busEstScripLocation)
                         system(busEstCallFull) 
                 }
@@ -156,7 +156,7 @@ if ((currentTime < fullStartTime)==TRUE) {
         
         # Want to check that we dont have issue with our admin data
         
-        dbLoc = paste(APPLOC,"headway/data/database/BhProd.db",sep="")
+        dbLoc = paste(APPLOC,"BusHeadway/data/database/BhProd.db",sep="")
         dbCon <- dbConnect(SQLite(),dbLoc)
         actualResultsTest <- dbSendQuery(dbCon, "SELECT * FROM TripUpdates WHERE arrival ='0'")
         busDataTest.df <- dbFetch(actualResultsTest)
@@ -169,18 +169,18 @@ if ((currentTime < fullStartTime)==TRUE) {
                         
                 } else {
                         print("Ran into issues with admin data, rerunning all admin collection")
-                        adminLoc = paste(APPLOC,"headway/code/admin/",sep="")
+                        adminLoc = paste(APPLOC,"BusHeadway/code/admin/",sep="")
                         currentFiles <- list.files(adminLoc)
                         removeFile<-currentFiles[currentFiles %in% grep("Last",currentFiles, value=T)]
                         file.remove(paste(adminLoc,removeFile,sep=""))
                         
-                        adminScriptLocation <- paste(APPLOC,"headway/code/admin/checkAdminUpdate.py",sep="") 
+                        adminScriptLocation <- paste(APPLOC,"BusHeadway/code/admin/checkAdminUpdate.py",sep="") 
                         adminCallFull <- sprintf("python3 %s", adminScriptLocation)
                         system(adminCallFull)
-                        schdBusScripLocation <- paste(APPLOC,"headway/code/admin/pullScheduledTrips.R",sep="")
+                        schdBusScripLocation <- paste(APPLOC,"BusHeadway/code/admin/pullScheduledTrips.R",sep="")
                         schdCallFull <- sprintf("Rscript %s", schdBusScripLocation)
                         system(schdCallFull)
-                        busEstScripLocation <- paste(APPLOC,"headway/code/admin/estimateTravelTime.R",sep="")
+                        busEstScripLocation <- paste(APPLOC,"BusHeadway/code/admin/estimateTravelTime.R",sep="")
                         busEstCallFull <- sprintf("Rscript %s", busEstScripLocation)
                         system(busEstCallFull) 
                 }

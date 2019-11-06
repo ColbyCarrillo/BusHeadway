@@ -12,7 +12,7 @@ library(stringr)
 library(dplyr)
 
 
-dbLoc <- paste(APPLOC,"headway/data/database/BhProd.db",sep="")
+dbLoc <- paste(APPLOC,"BusHeadway/data/database/BhProd.db",sep="")
 dbCon <- dbConnect(SQLite(),dbLoc)
 
 
@@ -110,7 +110,7 @@ uniqScheduledRoutesSN <- uniqScheduledRoutesSN[which(uniqScheduledRoutesSN$avgHe
 
 ### Save text file for routes + version over minimum ###
 routeFileName <- "desiredRoutes"
-routeFileLoc <- paste(APPLOC,'headway/data/database/',sep="")
+routeFileLoc <- paste(APPLOC,'BusHeadway/data/database/',sep="")
 routeFullFileName <- paste(routeFileName,Sys.Date(),".csv",sep = "")
 
 currentFilesR <- list.files(routeFileLoc)
@@ -127,7 +127,7 @@ if (length(oldFilesR) > 0) {
 
 
 totalRouteFileName <- "totalRoutesHeadway"
-totalRouteFileLoc <- paste(APPLOC,'headway/data/database/',sep="")
+totalRouteFileLoc <- paste(APPLOC,'BusHeadway/data/database/',sep="")
 
 totalRouteFullFileName <- paste(totalRouteFileName,Sys.Date(),".csv",sep = "")
 
@@ -147,7 +147,7 @@ if (length(oldFilesTR) > 0) {
 ### Save csv file for headway to pull ###
 
 fileName <- "scheduledBuses"
-scheduleFileLoc <- paste(APPLOC,'headway/data/database/',sep="")
+scheduleFileLoc <- paste(APPLOC,'BusHeadway/data/database/',sep="")
 scheduleFileName <- paste(fileName,Sys.Date(),".csv",sep = "")
 
 currentFiles <- list.files(scheduleFileLoc)

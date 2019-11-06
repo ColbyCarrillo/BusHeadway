@@ -12,8 +12,8 @@ library(stringr)
 library(dplyr)
 
 # Pulling scheduled times from excel file pulled at start of day
-schdCSVloc = paste(APPLOC,'headway/data/database/scheduledBuses',sep="")
-desiredCSVLoc = paste(APPLOC,'headway/data/database/desiredRoutes',sep="")
+schdCSVloc = paste(APPLOC,'BusHeadway/data/database/scheduledBuses',sep="")
+desiredCSVLoc = paste(APPLOC,'BusHeadway/data/database/desiredRoutes',sep="")
 currentDate = Sys.Date()
 currentTime = strftime(Sys.time(),format="%Y-%m-%d %H:%M:%S",tz=Sys.timezone())
 schdCSVFileName = paste(schdCSVloc,currentDate,'.csv',sep='')
@@ -116,7 +116,7 @@ finalMatrix <- merge(uniqTrips, finalMatrix, by.x="trip_id", by.y = "tripId")
 
 ### Save text file for routes + version over minimum ###
 stopEstFileName <- "stopDiffEstimates"
-stopEstFileLoc <- paste(APPLOC,'headway/data/database/',sep="")
+stopEstFileLoc <- paste(APPLOC,'BusHeadway/data/database/',sep="")
 
 stopEstFullFileName <- paste(stopEstFileName,Sys.Date(),".csv",sep = "")
 

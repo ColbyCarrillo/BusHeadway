@@ -14,9 +14,9 @@ fullEndTime = as.POSIXlt(paste(Sys.Date(),endTime), format = "%Y-%m-%d %H:%M:%S"
 
 callsPerMinute = 3
 
-APICallLocation = paste(APPLOC,"headway/code/api/callTripUpdatesAPI.py",sep="")
+APICallLocation = paste(APPLOC,"BusHeadway/code/api/callTripUpdatesAPI.py",sep="")
 APICallFull = sprintf("python3 %s", APICallLocation)
-APIParseLocation = paste(APPLOC,"headway/code/api/pythonParse.py",sep="")
+APIParseLocation = paste(APPLOC,"BusHeadway/code/api/pythonParse.py",sep="")
 APIParseFull = sprintf("python3 %s", APIParseLocation)
 
 

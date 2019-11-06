@@ -10,11 +10,11 @@ print(scriptStartTime)
 
 APPLOC="/home/ccar788/"
 
-databaseLocation <- paste(APPLOC,"headway/data/database/",sep="")
+databaseLocation <- paste(APPLOC,"BusHeadway/data/database/",sep="")
 database <- "BhProd.db"
 dbLoc <- paste(databaseLocation,database,sep="")
 
-databaseDeleteScriptLocation <- paste(APPLOC,"headway/code/database/deletion/",sep="")
+databaseDeleteScriptLocation <- paste(APPLOC,"BusHeadway/code/database/deletion/",sep="")
 
 # Order of deletion required by Table
 # Tier 1: Calendars

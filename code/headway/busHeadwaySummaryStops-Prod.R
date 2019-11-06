@@ -7,7 +7,7 @@ print(scriptStartTime)
 APPLOC="/home/ccar788/"
 
 library(RSQLite)
-dbLoc = paste(APPLOC,"headway/data/database/BhProd.db",sep="")
+dbLoc = paste(APPLOC,"BusHeadway/data/database/BhProd.db",sep="")
 dbCon <- dbConnect(SQLite(),dbLoc)
 
 # Querying Stops to get geo location
@@ -17,7 +17,7 @@ dbDisconnect(dbCon)
 
 
 
-headwayDataDriectory = paste(APPLOC,'headway/data/headwaySummary/',sep="")
+headwayDataDriectory = paste(APPLOC,'BusHeadway/data/headwaySummary/',sep="")
 curDate<-Sys.Date()
 pureHistHeadwayFile = paste('pureSummary',curDate,'.csv',sep="")
 mixEstimatorFile = paste('mixEstimateSummary',curDate,'.csv',sep="")

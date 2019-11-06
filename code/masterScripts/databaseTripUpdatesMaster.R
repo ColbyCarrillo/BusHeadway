@@ -11,10 +11,10 @@ APPLOC="/home/ccar788/"
 
 
 # Connection information
-databaseLocation <- paste(APPLOC,"headway/data/database/",sep="")
+databaseLocation <- paste(APPLOC,"BusHeadway/data/database/",sep="")
 database <- "BhProd.db"
 dbLoc <- paste(databaseLocation,database,sep="")
-databaseDeleteScriptLocation <- paste(APPLOC,"headway/code/database/deletion/",sep="")
+databaseDeleteScriptLocation <- paste(APPLOC,"BusHeadway/code/database/deletion/",sep="")
 tripUpdatesScript <- "DeleteOldTripUpdates.sql"
 tripUpdatesScriptText <- paste(readLines(sprintf("%s%s",databaseDeleteScriptLocation,tripUpdatesScript)),collapse=" ")
 

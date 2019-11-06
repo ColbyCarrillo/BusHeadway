@@ -11,7 +11,7 @@ APPLOC="/home/ccar788/"
 
 ##### Call admin data script #####
 
-adminScriptLocation <- paste(APPLOC,"headway/code/admin/checkAdminUpdate.py",sep="")
+adminScriptLocation <- paste(APPLOC,"BusHeadway/code/admin/checkAdminUpdate.py",sep="")
 adminCallFull <- sprintf("python3 %s", adminScriptLocation)
 system(adminCallFull)
 
@@ -21,7 +21,7 @@ print(Sys.time()-scriptStartTime)
 
 ##### Area for pulling scheduled buses for the day #####
 
-schdBusScripLocation <- paste(APPLOC,"headway/code/admin/pullScheduledTrips.R",sep="")
+schdBusScripLocation <- paste(APPLOC,"BusHeadway/code/admin/pullScheduledTrips.R",sep="")
 schdCallFull <- sprintf("Rscript %s", schdBusScripLocation)
 system(schdCallFull)
 
@@ -33,7 +33,7 @@ print(Sys.time()-scriptStartTime)
 
 ##### Area for estimating travel time of scheduled buses for the day #####
 
-busEstScripLocation <- paste(APPLOC,"headway/code/admin/estimateTravelTime.R",sep="")
+busEstScripLocation <- paste(APPLOC,"BusHeadway/code/admin/estimateTravelTime.R",sep="")
 busEstCallFull <- sprintf("Rscript %s", busEstScripLocation)
 system(busEstCallFull)
 

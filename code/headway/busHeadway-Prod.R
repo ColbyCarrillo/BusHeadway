@@ -15,7 +15,7 @@ databaseTimer <- Sys.time()
 
 APPLOC="/home/ccar788/"
 
-dbLoc = paste(APPLOC,"headway/data/database/BhProd.db",sep="")
+dbLoc = paste(APPLOC,"BusHeadway/data/database/BhProd.db",sep="")
 dbCon <- dbConnect(SQLite(),dbLoc)
 
 
@@ -51,9 +51,9 @@ if (nrow(busData.df)==0) {
 
 
 # Pulling scheduled times from excel file pulled at start of day
-schdCSVloc = paste(APPLOC,'headway/data/database/scheduledBuses',sep="")
-desiredCSVLoc = paste(APPLOC,'headway/data/database/desiredRoutes',sep="")
-estimateCSVLoc = paste(APPLOC,'headway/data/database/stopDiffEstimates',sep="")
+schdCSVloc = paste(APPLOC,'BusHeadway/data/database/scheduledBuses',sep="")
+desiredCSVLoc = paste(APPLOC,'BusHeadway/data/database/desiredRoutes',sep="")
+estimateCSVLoc = paste(APPLOC,'BusHeadway/data/database/stopDiffEstimates',sep="")
 currentDate = Sys.Date()
 currentTime = strftime(Sys.time(),format="%Y-%m-%d %H:%M:%S",tz=Sys.timezone())
 schdCSVFileName = paste(schdCSVloc,currentDate,'.csv',sep='')
@@ -936,7 +936,7 @@ print(length(uniqRoutes))
 ##################################
 csvSaveTime <- Sys.time()
 
-summaryOutFileLoc = paste(APPLOC,'headway/data/headwaySummary/',sep="")
+summaryOutFileLoc = paste(APPLOC,'BusHeadway/data/headwaySummary/',sep="")
 
 pureOutFile <- paste(summaryOutFileLoc, 'pureSummary', currentDate, '.csv', sep = '')
 mixOutFile <- paste(summaryOutFileLoc, 'mixEstimateSummary', currentDate, '.csv', sep = '')

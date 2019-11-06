@@ -3,8 +3,8 @@ import json, os, datetime, sqlite3
 APPLOC="/home/ccar788/"
 
 now = datetime.datetime.now()
-fileLocation = APPLOC+"headway/data/api/"
-databasePath = APPLOC+"headway/data/database/BhProd.db"
+fileLocation = APPLOC+"BusHeadway/data/api/"
+databasePath = APPLOC+"BusHeadway/data/database/BhProd.db"
 
 os.chdir(fileLocation)
 fileList = os.listdir(fileLocation)

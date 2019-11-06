@@ -8,7 +8,7 @@ print(Sys.time())
 
 APPLOC="/home/ccar788/"
 
-masterScriptsLocation <- paste(APPLOC,"headway/code/masterScripts/",sep="")
+masterScriptsLocation <- paste(APPLOC,"BusHeadway/code/masterScripts/",sep="")
 
 databaseManage <- "databaseManageMaster.R"        
 adminData <- "adminDataMaster.R"

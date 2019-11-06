@@ -7,7 +7,7 @@
 import http.client, urllib.request, urllib.parse, urllib.error, base64, os, datetime
 
 APPLOC="/home/ccar788/"
-dataDirectory = APPLOC+"headway/data/api"
+dataDirectory = APPLOC+"BusHeadway/data/api"
 
 headers = {
     # Request headers
