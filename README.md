@@ -17,16 +17,18 @@ Required software:
 	One is required to:
   	1.) Acquire a API key from AT (https://dev-portal.at.govt.nz/) 
 		
-  	2.) Alter the application location variables to where you are cloning the app on your system and your new application key provided by AT.
+  	2.) Change the permissions on altAppVariables.sh and initApp.sh to be executable
+		-example: chmod +x altAppVariables.sh
+	3.) Alter the application location variables to where you are cloning the app on your system and your new application key provided by AT.
       	-This can be done by first CHANGING the variables to the respective locations and then altAppVariables.sh script which will replace all the app locations in the respective files
 				
-  	3.) Run the initialize application using the initApp.sh script, which will create the database tables and views
+  	4.) Run the initialize application using the initApp.sh script, which will create the database tables and views
 		
-  	4.) Alter cron jobs to run daily (I choose 01:00): 
+  	5.) Alter cron jobs to run daily (I choose 01:00): 
       		a.) startProg.sh
           		-example: 0 1 * * * PATH=/opt/anaconda3/bin:$PATH /home/ccar788/headway/code/masterScripts/startProg.sh >> /home/ccar788/headway/code/masterScripts/output/cron.txt 2>&1
      	 	b.) removeOldFiles.sh
           		-example: 0 1 * * * /home/ccar788/headway/code/masterScripts/removeOldFiles.sh
 
-	5.) If you desire for the application to start right away, you can run 'nohup startProg.sh &' to start the program in the background, followed by disown %1 to have it run even after you logout (given that you only have one process running in background)      
+	6.) If you desire for the application to start right away, you can run 'nohup startProg.sh &' to start the program in the background, followed by disown %1 to have it run even after you logout (given that you only have one process running in background)      
 
