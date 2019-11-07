@@ -44,10 +44,11 @@ if ((currentTime <= startOfDay) == TRUE) {
         # Run database cleanse and application scripts
         system(databaseCommandFull)
         system(adminCommandFull)
-        #system(databaseTripUpdatesCommandFull, wait = FALSE)
+
         system(headwayCalcCommandFull, wait = FALSE)
         system(headwayAnalysisCommandFull, wait = FALSE)
         system(apiCommandFull)
+        
         
         break
         
@@ -56,10 +57,14 @@ if ((currentTime <= startOfDay) == TRUE) {
         
         # Run application scripts
         system(adminCommandFull)
-        #system(databaseTripUpdatesCommandFull, wait = FALSE)
+        
+        #Need some data in the DB
+        system(apiCommandFull, wait=FALSE)
+        Sys.sleep(600)
+
         system(headwayCalcCommandFull, wait = FALSE)
-        system(headwayAnalysisCommandFull, wait = FALSE)
-        system(apiCommandFull)
+        system(headwayAnalysisCommandFull)
+
         
         break
         
@@ -76,7 +81,7 @@ if ((currentTime <= startOfDay) == TRUE) {
         # Run database cleanse and application scripts
         system(databaseCommandFull)
         system(adminCommandFull)
-        #system(databaseTripUpdatesCommandFull, wait = FALSE)
+
         system(headwayCalcCommandFull, wait = FALSE)
         system(headwayAnalysisCommandFull, wait = FALSE)
         system(apiCommandFull)
