@@ -18,9 +18,10 @@ Required software:
   	1.) Acquire a API key from AT (https://dev-portal.at.govt.nz/) 
 		
   	2.) Change the permissions on altAppVariables.sh and initApp.sh to be executable
-		-example: chmod +x altAppVariables.sh
-	3.) Alter the application location variables to where you are cloning the app on your system and your new application key provided by AT.
+		-example: chmod +x altAppVariables.sh initApp.sh
+	3.) Alter the APPLOC variable in altAppVariables.sh and initApp.sh to your username (this is expected to be run on a linux machine under /home/username/.
       	-This can be done by first CHANGING the variables to the respective locations and then altAppVariables.sh script which will replace all the app locations in the respective files
+	-For users within UofA you will be requied to use a proxy. Please contact me directly for this script.
 				
   	4.) Run the initialize application using the initApp.sh script, which will create the database tables and views
 		
@@ -30,5 +31,7 @@ Required software:
      	 	b.) removeOldFiles.sh
           		-example: 0 1 * * * /home/ccar788/headway/code/masterScripts/removeOldFiles.sh
 
-	6.) If you desire for the application to start right away, you can run 'nohup startProg.sh &' to start the program in the background, followed by disown %1 to have it run even after you logout (given that you only have one process running in background)      
+	6.) If you desire for the application to start right away, you can run 'nohup startProg.sh &' to start the program in the background, followed by disown %1 to have it run even after you logout (given that you only have one process running in background) 
+	
+Users should note: if you are cloning the files to a windows machine and then transfering over to a linux box, you may run into some unseen characters errors in the .sh scripts (error output:-bash: ./removeOldFiles.sh: /bin/bash^M: bad interpreter: No such file or directory). The solution I found on stackoverflow was to run: sed -i -e 's/\r$//' ./scriptName.sh
 
