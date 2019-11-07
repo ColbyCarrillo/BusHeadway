@@ -1,3 +1,5 @@
 #!/bin/bash
-APPLOC="/home/ccar788/"
-sqlite3 "${APPLOC}BusHeadway/data/database/BhProd.db" < "${APPLOC}BusHeadway/code/database/BhCreateDatabase-Prod.sql"
+#Change variable below before running
+APPLOC="ccar788"
+#
+sqlite3 "/home/${APPLOC}/BusHeadway/data/database/BhProd.db" < "/home/${APPLOC}/BusHeadway/code/database/BhCreateDatabase-Prod.sql"
