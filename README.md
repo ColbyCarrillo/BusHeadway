@@ -10,7 +10,7 @@ By cloning this repo, it will provide all the required files and directories in 
 that I created for AT in Auckland, New Zealand.
 
 Required software:
--R (dplyr, stringr, RSQLite), Python 3.6 or greater, SQLite (Version 3.7 or greater)
+-R (dplyr, stringr, RSQLite), Python 3.6 or greater, SQLite (Tested on version 3.29.0)
 		
 		
 		
